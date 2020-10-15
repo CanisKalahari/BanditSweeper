@@ -30,9 +30,6 @@ def here_comes_a_new_challenger(player_str):
         elif player_type == 'mucb':
             c, safe_reward, bomb_reward, unseen_type = map(float, player_args)
             player = ourplayers.MUCBPlayer(c, safe_reward, bomb_reward, unseen_type)
-        elif player_type == 'knn':
-            K, safe_reward, bomb_reward = map(float, player_args)
-            player = ourplayers.KNNPlayer(int(K), safe_reward, bomb_reward)
         else:
             raise Exception('Error 404: player not found')
 
@@ -177,7 +174,7 @@ def run_trial(arg_list):
     return str(timestamp), 100. * wr
 
 if __name__ == '__main__':
-    #exemplo de chamada no terminal: python3 experimento.py -p megreedy,0,0,0,1 -s 5,5,4 -r 1000
-    #python3 experimento.py -p mucb,.1,-1,1,-1 -s 5,5,4 -r 1000
+    #python3 experihalls.py -p megreedy,0,0,0,1 -s 5,5,4 -r 1000 -t 0
+    #python3 experihalls.py -p mucb,.1,-1,1,-1 -s 5,5,4 -r 1000 -t 0
     
     run_trial(None)
